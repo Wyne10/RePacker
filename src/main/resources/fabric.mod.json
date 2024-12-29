@@ -13,17 +13,13 @@
 	"icon": "assets/repacker/icon.png",
 	"environment": "client",
 	"entrypoints": {
-		"main": [
-			"me.wyne.RePacker"
-		],
 		"client": [
 			"me.wyne.RePacker"
 		]
 	},
 	"mixins": [
-		"repacker.mixins.json",
 		{
-			"config": "repacker.client.mixins.json",
+			"config": "repacker.mixins.json",
 			"environment": "client"
 		}
 	],
