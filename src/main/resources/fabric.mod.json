@@ -1,0 +1,39 @@
+{
+	"schemaVersion": 1,
+	"id": "repacker",
+	"version": "${version}",
+	"name": "RePacker",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": ["Wyne"],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "GPL-3.0",
+	"icon": "assets/repacker/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"main": [
+			"me.wyne.RePacker"
+		],
+		"client": [
+			"me.wyne.RePacker"
+		]
+	},
+	"mixins": [
+		"repacker.mixins.json",
+		{
+			"config": "repacker.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.9",
+		"minecraft": "~1.21.4",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
