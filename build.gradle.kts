@@ -1,3 +1,5 @@
+import net.fabricmc.loom.task.RunGameTask
+
 plugins {
 	`maven-publish`
 	alias(libs.plugins.loom)
@@ -20,6 +22,14 @@ dependencies {
 	mappings("net.fabricmc:yarn:${findProperty("yarn_mappings")}:v2")
 	modImplementation("net.fabricmc:fabric-loader:${findProperty("loader_version")}")
 	modImplementation("net.fabricmc.fabric-api:fabric-api:${findProperty("fabric_version")}")
+}
+
+tasks.withType(net.fabricmc.loom.task.AbstractRunTask::class) {
+	javaLauncher = javaToolchains.launcherFor {
+		vendor = JvmVendorSpec.JETBRAINS
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+	jvmArgs("-XX:+AllowEnhancedClassRedefinition")
 }
 
 tasks {
