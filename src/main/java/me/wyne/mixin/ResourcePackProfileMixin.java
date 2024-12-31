@@ -29,7 +29,7 @@ abstract class ResourcePackProfileMixin {
     }
 
     @Inject(at = @At("HEAD"), method = "getPosition", cancellable = true)
-    protected void getFakePosition(CallbackInfoReturnable<ResourcePackPosition> callbackInfo) {
+    protected void ignorePosition(CallbackInfoReturnable<ResourcePackPosition> callbackInfo) {
         if (info.source() != ResourcePackSource.BUILTIN)
             callbackInfo.setReturnValue(new ResourcePackPosition(false, ResourcePackProfile.InsertionPosition.TOP, false));
     }

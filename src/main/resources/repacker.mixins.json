@@ -3,7 +3,8 @@
 	"package": "me.wyne.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"client": [
-		"ResourcePackProfileMixin"
+		"ResourcePackProfileMixin",
+		"ServerResourcePackManagerMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

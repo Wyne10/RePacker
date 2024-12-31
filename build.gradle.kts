@@ -1,5 +1,3 @@
-import net.fabricmc.loom.task.RunGameTask
-
 plugins {
 	`maven-publish`
 	alias(libs.plugins.loom)
@@ -15,6 +13,10 @@ group = findProperty("maven_group").toString()
 
 base {
 	archivesName.set(findProperty("archives_base_name").toString())
+}
+
+loom {
+	accessWidenerPath.set(file("src/main/resources/repacker.accesswidener"))
 }
 
 dependencies {
